@@ -235,16 +235,16 @@ export default function WalletModal({
       if (option.connector === injected) {
         // don't show injected if there's no injected provider
         if (!(window.web3 || window.ethereum)) {
-          if (option.name === 'MetaMask') {
+          if (option.name === 'MEETONE') {
             return (
               <Option
                 id={`connect-${key}`}
                 key={key}
                 color={'#E8831D'}
-                header={'Install Metamask'}
+                header={'安装 MEETONE'}
                 subheader={null}
-                link={'https://metamask.io/'}
-                icon={MetamaskIcon}
+                link={'https://meet.one/'}
+                icon={require('../../assets/images/' + option.iconName)}
               />
             )
           } else {
@@ -332,7 +332,7 @@ export default function WalletModal({
           </HeaderRow>
         ) : (
           <HeaderRow>
-            <HoverText>Connect to a wallet</HoverText>
+            <HoverText>连接您的钱包</HoverText>
           </HeaderRow>
         )}
         <ContentWrapper>
@@ -348,8 +348,8 @@ export default function WalletModal({
           )}
           {walletView !== WALLET_VIEWS.PENDING && (
             <Blurb>
-              <span>New to Ethereum? &nbsp;</span>{' '}
-              <ExternalLink href="https://ethereum.org/wallets/">Learn more about wallets</ExternalLink>
+              <span>刚接触ETH? &nbsp;</span>{' '}
+              <ExternalLink href="https://meet.one">了解更多关于钱包的信息</ExternalLink>
             </Blurb>
           )}
         </ContentWrapper>

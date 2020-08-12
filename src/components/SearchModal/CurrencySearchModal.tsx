@@ -146,7 +146,7 @@ export default function CurrencySearchModal({
         <PaddedColumn gap="14px">
           <RowBetween>
             <Text fontWeight={500} fontSize={16}>
-              Select a token
+              选择一个Token
               <QuestionHelper
                 disabled={tooltipOpen}
                 text="Find a token by searching for its name or symbol or by pasting its address below."

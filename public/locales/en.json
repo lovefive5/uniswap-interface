@@ -17,7 +17,7 @@
   "balance": "Balance: {{ balanceInput }}",
   "unlock": "Unlock",
   "pending": "Pending",
-  "selectToken": "Select a token",
+  "selectToken": "选择一个Token",
   "searchOrPaste": "Search Token Name, Symbol, or Address",
   "searchOrPasteMobile": "Name, Symbol, or Address",
   "noExchange": "No Exchange Found",
@@ -87,5 +87,5 @@
   "forAtLeast": "for at least ",
   "brokenToken": "The selected token is not compatible with Uniswap V1. Adding liquidity will result in locked funds.",
   "toleranceExplanation": "Lowering this limit decreases your risk of frontrunning. However, this makes more likely that your transaction will fail due to normal price movements.",
-  "tokenSearchPlaceholder": "Search name or paste address"
+  "tokenSearchPlaceholder": "搜索币种名称或者粘贴币种地址"
 }

@@ -142,19 +142,19 @@ export function useDerivedSwapInfo(): {
 
   let inputError: string | undefined
   if (!account) {
-    inputError = 'Connect Wallet'
+    inputError = '连接您的钱包'
   }
 
   if (!parsedAmount) {
-    inputError = inputError ?? 'Enter an amount'
+    inputError = inputError ?? '输入数量'
   }
 
   if (!currencies[Field.INPUT] || !currencies[Field.OUTPUT]) {
-    inputError = inputError ?? 'Select a token'
+    inputError = inputError ?? '选择一个Token'
   }
 
   if (!to) {
-    inputError = inputError ?? 'Enter a recipient'
+    inputError = inputError ?? '输入接收方'
   }
 
   const [allowedSlippage] = useUserSlippageTolerance()

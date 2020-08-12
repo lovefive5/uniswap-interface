@@ -31,10 +31,10 @@ export default function Toggle({ isActive, toggle }: ToggleProps) {
   return (
     <StyledToggle isActive={isActive} target="_self" onClick={toggle}>
       <ToggleElement isActive={isActive} isOnSwitch={true}>
-        On
+        开
       </ToggleElement>
       <ToggleElement isActive={!isActive} isOnSwitch={false}>
-        Off
+        关
       </ToggleElement>
     </StyledToggle>
   )

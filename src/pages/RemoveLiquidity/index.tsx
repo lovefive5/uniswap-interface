@@ -645,7 +645,7 @@ export default function RemoveLiquidity({
             )}
             <div style={{ position: 'relative' }}>
               {!account ? (
-                <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
+                <ButtonLight onClick={toggleWalletModal}>连接您的钱包</ButtonLight>
               ) : (
                 <RowBetween>
                   <ButtonConfirmed
