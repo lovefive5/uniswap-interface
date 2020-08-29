@@ -24,7 +24,7 @@ export default function ListIntroduction({ onSelectList }: { onSelectList: () =>
           />
           <img
             style={{ width: '100%', borderRadius: '12px' }}
-            src="https://cloudflare-ipfs.com/ipfs/QmRf1rAJcZjV3pwKTHfPdJh4RxR8yvRHkdLjZCsmp7T6hA"
+            src="https://static.ethte.com/MeetPC/2020_08_29/2300/handle.gif"
             alt="token-list-preview"
           />
           <Text style={{ marginBottom: '8px', textAlign: 'center' }}>

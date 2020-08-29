@@ -102,18 +102,17 @@ export default function TokenWarningModal({
         <AutoColumn gap="lg">
           <AutoRow gap="6px">
             <StyledWarningIcon />
-            <TYPE.main color={'red2'}>Token imported</TYPE.main>
+            <TYPE.main color={'red2'}>Token 已经导入</TYPE.main>
           </AutoRow>
           <TYPE.body color={'red2'}>
-            Anyone can create an ERC20 token on Ethereum with <em>any</em> name, including creating fake versions of
-            existing tokens and tokens that claim to represent projects that do not have a token.
+            任何人都可以在以太坊上创建任何名称的 ERC20
+            Token，包括创建现有令牌的虚假版本以及声称代表没有令牌的项目的Token。
           </TYPE.body>
           <TYPE.body color={'red2'}>
-            This interface can load arbitrary tokens by token addresses. Please take extra caution and do your research
-            when interacting with arbitrary ERC20 tokens.
+            该接口可以通过令牌地址加载任意令牌。 与任意ERC20令牌进行交互时，请格外小心并进行研究。
           </TYPE.body>
           <TYPE.body color={'red2'}>
-            If you purchase an arbitrary token, <strong>you may be unable to sell it back.</strong>
+            如果您购买了任意 token, <strong>则可能无法出售.</strong>
           </TYPE.body>
           {tokens.map(token => {
             return <TokenWarningCard key={token.address} token={token} />
@@ -127,7 +126,7 @@ export default function TokenWarningModal({
                   checked={understandChecked}
                   onChange={toggleUnderstand}
                 />{' '}
-                I understand
+                我已了解
               </label>
             </div>
             <ButtonError
@@ -143,7 +142,7 @@ export default function TokenWarningModal({
                 onConfirm()
               }}
             >
-              <TYPE.body color="white">Continue</TYPE.body>
+              <TYPE.body color="white">继续交易</TYPE.body>
             </ButtonError>
           </RowBetween>
         </AutoColumn>
