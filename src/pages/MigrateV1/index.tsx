@@ -72,15 +72,14 @@ export default function MigrateV1() {
       <AutoColumn gap="16px">
         <AutoRow style={{ alignItems: 'center', justifyContent: 'space-between' }} gap="8px">
           <BackArrow to="/pool" />
-          <TYPE.mediumHeader>Migrate V1 Liquidity</TYPE.mediumHeader>
+          <TYPE.mediumHeader>迁移V1流动资金池</TYPE.mediumHeader>
           <div>
             <QuestionHelper text="Migrate your liquidity tokens from Uniswap V1 to Uniswap V2." />
           </div>
         </AutoRow>
 
         <TYPE.body style={{ marginBottom: 8, fontWeight: 400 }}>
-          For each pool shown below, click migrate to remove your liquidity from Uniswap V1 and deposit it into Uniswap
-          V2.
+          对于以下显示的每个池，单击“迁移”以从Uniswap V1中删除您的流动性并将其存入Uniswap V2
         </TYPE.body>
 
         {!account ? (
@@ -92,25 +91,25 @@ export default function MigrateV1() {
         ) : isLoading ? (
           <LightCard padding="40px">
             <TYPE.body color={theme.text3} textAlign="center">
-              <Dots>Loading</Dots>
+              <Dots>加载中...</Dots>
             </TYPE.body>
           </LightCard>
         ) : (
-          <>
-            <AutoRow>
-              <SearchInput
-                value={tokenSearch}
-                onChange={handleTokenSearchChange}
-                placeholder="Enter a token address to find liquidity"
-              />
-            </AutoRow>
-            {allV1PairsWithLiquidity?.length > 0 ? (
-              <>{allV1PairsWithLiquidity}</>
-            ) : (
-              <EmptyState message="No V1 Liquidity found." />
+              <>
+                <AutoRow>
+                  <SearchInput
+                    value={tokenSearch}
+                    onChange={handleTokenSearchChange}
+                    placeholder="输入Token地址以查找流动资金池"
+                  />
+                </AutoRow>
+                {allV1PairsWithLiquidity?.length > 0 ? (
+                  <>{allV1PairsWithLiquidity}</>
+                ) : (
+                    <EmptyState message="找不到V1流动性资金池。" />
+                  )}
+              </>
             )}
-          </>
-        )}
       </AutoColumn>
     </BodyWrapper>
   )

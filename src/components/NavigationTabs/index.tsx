@@ -73,8 +73,8 @@ export function FindPoolTabs() {
         <HistoryLink to="/pool">
           <StyledArrowLeft />
         </HistoryLink>
-        <ActiveText>Import Pool</ActiveText>
-        <QuestionHelper text={"Use this tool to find pairs that don't automatically appear in the interface."} />
+        <ActiveText>导入资金池</ActiveText>
+        <QuestionHelper text={"使用此工具查找不会自动出现在界面中的交易对."} />
       </RowBetween>
     </Tabs>
   )
@@ -87,12 +87,12 @@ export function AddRemoveTabs({ adding }: { adding: boolean }) {
         <HistoryLink to="/pool">
           <StyledArrowLeft />
         </HistoryLink>
-        <ActiveText>{adding ? 'Add' : 'Remove'} Liquidity</ActiveText>
+        <ActiveText>{adding ? '添加' : '删除'} 资金池</ActiveText>
         <QuestionHelper
           text={
             adding
-              ? 'When you add liquidity, you are given pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time.'
-              : 'Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive.'
+              ? '当您增加流动性时，将获得代表您的资产代币。 这些代币会自动赚取与您的份额份额成正比的费用，并且可以随时兑换.'
+              : '删除池代币会按照您在池中所占比例成比例的当前汇率，将您的资产代币转换回基础代币。 应计费用已包含在您收到的金额中.'
           }
         />
       </RowBetween>
