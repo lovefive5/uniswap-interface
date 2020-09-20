@@ -94,7 +94,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     description: '区块链生态钱包.',
     href: null,
     color: '#E8831D'
-  },
+  }
   // WALLET_CONNECT: {
   //   connector: walletconnect,
   //   name: 'WalletConnect',
