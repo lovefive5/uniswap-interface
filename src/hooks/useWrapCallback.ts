@@ -50,7 +50,7 @@ export default function useWrapCallback(
                 }
               }
             : undefined,
-        inputError: sufficientBalance ? undefined : 'Insufficient ETH balance'
+        inputError: sufficientBalance ? undefined : 'ETH余额不足'
       }
     } else if (currencyEquals(WETH[chainId], inputCurrency) && outputCurrency === ETHER) {
       return {
@@ -60,13 +60,13 @@ export default function useWrapCallback(
             ? async () => {
                 try {
                   const txReceipt = await wethContract.withdraw(`0x${inputAmount.raw.toString(16)}`)
-                  addTransaction(txReceipt, { summary: `Unwrap ${inputAmount.toSignificant(6)} WETH to ETH` })
+                  addTransaction(txReceipt, { summary: `不能置换 ${inputAmount.toSignificant(6)} WETH 为 ETH` })
                 } catch (error) {
                   console.error('Could not withdraw', error)
                 }
               }
             : undefined,
-        inputError: sufficientBalance ? undefined : 'Insufficient WETH balance'
+        inputError: sufficientBalance ? undefined : 'WETH余额不足'
       }
     } else {
       return NOT_APPLICABLE

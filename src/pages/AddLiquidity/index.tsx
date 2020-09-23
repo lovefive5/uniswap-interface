@@ -373,7 +373,7 @@ export default function AddLiquidity({
                 <GreyCard padding="0px" borderRadius={'20px'}>
                   <RowBetween padding="1rem">
                     <TYPE.subHeader fontWeight={500} fontSize={14}>
-                      {noLiquidity ? 'Initial prices' : 'Prices'} and pool share
+                      {noLiquidity ? '初始价格' : '价格 '} 和流动性池分享
                     </TYPE.subHeader>
                   </RowBetween>{' '}
                   <LightCard padding="1rem" borderRadius={'20px'}>
@@ -420,7 +420,7 @@ export default function AddLiquidity({
                           {approvalB === ApprovalState.PENDING ? (
                             <Dots>Approving {currencies[Field.CURRENCY_B]?.symbol}</Dots>
                           ) : (
-                            'Approve ' + currencies[Field.CURRENCY_B]?.symbol
+                            '授权' + currencies[Field.CURRENCY_B]?.symbol
                           )}
                         </ButtonPrimary>
                       )}
@@ -434,7 +434,7 @@ export default function AddLiquidity({
                   error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
                 >
                   <Text fontSize={20} fontWeight={500}>
-                    {error ?? 'Supply'}
+                    {error ?? '供应'}
                   </Text>
                 </ButtonError>
               </AutoColumn>

@@ -136,7 +136,7 @@ export function useDerivedMintInfo(
   }
 
   if (pairState === PairState.INVALID) {
-    error = error ?? 'Invalid pair'
+    error = error ?? '错误的交易对'
   }
 
   if (!parsedAmounts[Field.CURRENCY_A] || !parsedAmounts[Field.CURRENCY_B]) {
@@ -146,11 +146,11 @@ export function useDerivedMintInfo(
   const { [Field.CURRENCY_A]: currencyAAmount, [Field.CURRENCY_B]: currencyBAmount } = parsedAmounts
 
   if (currencyAAmount && currencyBalances?.[Field.CURRENCY_A]?.lessThan(currencyAAmount)) {
-    error = 'Insufficient ' + currencies[Field.CURRENCY_A]?.symbol + ' balance'
+    error = '' + currencies[Field.CURRENCY_A]?.symbol + ' 余额不足'
   }
 
   if (currencyBAmount && currencyBalances?.[Field.CURRENCY_B]?.lessThan(currencyBAmount)) {
-    error = 'Insufficient ' + currencies[Field.CURRENCY_B]?.symbol + ' balance'
+    error = '' + currencies[Field.CURRENCY_B]?.symbol + ' 余额不足'
   }
 
   return {

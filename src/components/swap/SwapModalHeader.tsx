@@ -99,19 +99,19 @@ export default function SwapModalHeader({
       <AutoColumn justify="flex-start" gap="sm" style={{ padding: '12px 0 0 0px' }}>
         {trade.tradeType === TradeType.EXACT_INPUT ? (
           <TYPE.italic textAlign="left" style={{ width: '100%' }}>
-            {`Output is estimated. You will receive at least `}
+            {`如果输出。 您至少会收到 `}
             <b>
               {slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(6)} {trade.outputAmount.currency.symbol}
             </b>
-            {' or the transaction will revert.'}
+            {' 否则交易将还原。'}
           </TYPE.italic>
         ) : (
           <TYPE.italic textAlign="left" style={{ width: '100%' }}>
-            {`Input is estimated. You will sell at most `}
+            {`估计输入。 您最多将出售 `}
             <b>
               {slippageAdjustedAmounts[Field.INPUT]?.toSignificant(6)} {trade.inputAmount.currency.symbol}
             </b>
-            {' or the transaction will revert.'}
+            {' 否则交易将还原。'}
           </TYPE.italic>
         )}
       </AutoColumn>

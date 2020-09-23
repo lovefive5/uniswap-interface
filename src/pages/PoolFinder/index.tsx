@@ -151,9 +151,9 @@ export default function PoolFinder() {
           ) : validPairNoLiquidity ? (
             <LightCard padding="45px 10px">
               <AutoColumn gap="sm" justify="center">
-                <Text textAlign="center">No pool found.</Text>
+                <Text textAlign="center">未找到流动性池</Text>
                 <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                  Create pool.
+                  创建一个流动性池.
                 </StyledInternalLink>
               </AutoColumn>
             </LightCard>
@@ -161,7 +161,7 @@ export default function PoolFinder() {
             <LightCard padding="45px 10px">
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center" fontWeight={500}>
-                  Invalid pair.
+                  错误的交易对
                 </Text>
               </AutoColumn>
             </LightCard>

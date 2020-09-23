@@ -69,9 +69,9 @@ export default function SwapModalFooter({
         <RowBetween>
           <RowFixed>
             <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
-              {trade.tradeType === TradeType.EXACT_INPUT ? 'Minimum received' : 'Maximum sold'}
+              {trade.tradeType === TradeType.EXACT_INPUT ? '最少获得' : 'Maximum sold'}
             </TYPE.black>
-            <QuestionHelper text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed." />
+            <QuestionHelper text="如果在确认之前出现较大的不利价格变动，则您的交易将恢复。" />
           </RowFixed>
           <RowFixed>
             <TYPE.black fontSize={14}>
@@ -89,18 +89,18 @@ export default function SwapModalFooter({
         <RowBetween>
           <RowFixed>
             <TYPE.black color={theme.text2} fontSize={14} fontWeight={400}>
-              Price Impact
+              价格滑点
             </TYPE.black>
-            <QuestionHelper text="The difference between the market price and your price due to trade size." />
+            <QuestionHelper text="市场价格和您的价格之间的差额取决于交易量。" />
           </RowFixed>
           <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
         </RowBetween>
         <RowBetween>
           <RowFixed>
             <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
-              Liquidity Provider Fee
+              流动性提供者费用
             </TYPE.black>
-            <QuestionHelper text="A portion of each trade (0.30%) goes to liquidity providers as a protocol incentive." />
+            <QuestionHelper text="每笔交易的一部分（0.30％）作为协议激励会给到流动性提供者。" />
           </RowFixed>
           <TYPE.black fontSize={14}>
             {realizedLPFee ? realizedLPFee?.toSignificant(6) + ' ' + trade.inputAmount.currency.symbol : '-'}
@@ -117,7 +117,7 @@ export default function SwapModalFooter({
           id="confirm-swap-or-send"
         >
           <Text fontSize={20} fontWeight={500}>
-            {severity > 2 ? 'Swap Anyway' : 'Confirm Swap'}
+            {severity > 2 ? '仍要交换' : '确定置换'}
           </Text>
         </ButtonError>
 

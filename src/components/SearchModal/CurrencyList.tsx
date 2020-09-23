@@ -22,13 +22,13 @@ function currencyKey(currency: Currency): string {
 }
 
 export default function CurrencyList({
-  currencies,
-  allBalances,
-  selectedCurrency,
-  onCurrencySelect,
-  otherCurrency,
-  showSendWithSwap
-}: {
+                                       currencies,
+                                       allBalances,
+                                       selectedCurrency,
+                                       onCurrencySelect,
+                                       otherCurrency,
+                                       showSendWithSwap
+                                     }: {
   currencies: Currency[]
   selectedCurrency: Currency
   allBalances: { [tokenAddress: string]: CurrencyAmount }
@@ -43,6 +43,24 @@ export default function CurrencyList({
   const addToken = useAddUserToken()
   const removeToken = useRemoveUserAddedToken()
   const ETHBalance = useETHBalances([account])[account]
+
+  // const mefiAddress = '0x1a969239E12F07281f8876D11AfceE081D872adf'
+  // if (!allTokens[mefiAddress]) {
+  //   const mefiInfo = {
+  //     address: mefiAddress,
+  //     chainId: 1,
+  //     decimals: 8,
+  //     logoURI: `https://ethapi.meet.one/uniswap/trustwallet/assets/master/blockchains/ethereum/assets/${mefiAddress}/logo.png`,
+  //     name: 'MEET.ONE Finance',
+  //     symbol: 'MEFI'
+  //   }
+  //   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  //   // @ts-ignore
+  //   allTokens[mefiAddress] = {
+  //     ...mefiInfo,
+  //     ...{ tokenInfo: mefiInfo }
+  //   }
+  // }
 
   const CurrencyRow = useMemo(() => {
     return memo(function CurrencyRow({ index, style }: { index: number; style: CSSProperties }) {
@@ -66,7 +84,7 @@ export default function CurrencyList({
           selected={otherSelected}
         >
           <RowFixed>
-            <CurrencyLogo currency={currency} size={'24px'} style={{ marginRight: '14px' }} />
+            <CurrencyLogo currency={currency} size={'24px'} style={{ marginRight: '14px' }}/>
             <Column>
               <Text fontWeight={500}>{currency.symbol}</Text>
               <FadedSpan>
@@ -115,7 +133,7 @@ export default function CurrencyList({
                 )}
               </Text>
             ) : account ? (
-              <Loader />
+              <Loader/>
             ) : (
               '-'
             )}

@@ -269,7 +269,7 @@ export default function Swap() {
 
           <AutoColumn gap={'md'}>
             <CurrencyInputPanel
-              label={independentField === Field.OUTPUT && !showWrap ? 'From (estimated)' : 'From'}
+              label={independentField === Field.OUTPUT && !showWrap ? '输入 (预估)' : '输入'}
               value={formattedAmounts[Field.INPUT]}
               showMaxButton={!atMaxAmountInput}
               currency={currencies[Field.INPUT]}
@@ -300,7 +300,7 @@ export default function Swap() {
                   </ArrowWrapper>
                   {recipient === null && !showWrap ? (
                     <LinkStyledButton id="add-recipient-button" onClick={() => onChangeRecipient('')}>
-                      + Add a send (optional)
+                      + 添加发送（可选）
                     </LinkStyledButton>
                   ) : null}
                 </AutoRow>
@@ -309,7 +309,7 @@ export default function Swap() {
             <CurrencyInputPanel
               value={formattedAmounts[Field.OUTPUT]}
               onUserInput={handleTypeOutput}
-              label={independentField === Field.INPUT && !showWrap ? 'To (estimated)' : 'To'}
+              label={independentField === Field.INPUT && !showWrap ? '输出 (预估)' : '输出'}
               showMaxButton={false}
               currency={currencies[Field.OUTPUT]}
               onCurrencySelect={address => onCurrencySelection(Field.OUTPUT, address)}
@@ -324,7 +324,7 @@ export default function Swap() {
                     <ArrowDown size="16" color={theme.text2} />
                   </ArrowWrapper>
                   <LinkStyledButton id="remove-recipient-button" onClick={() => onChangeRecipient(null)}>
-                    - Remove send
+                    - 删除发送
                   </LinkStyledButton>
                 </AutoRow>
                 <AddressInputPanel id="recipient" value={recipient} onChange={onChangeRecipient} />
@@ -336,7 +336,7 @@ export default function Swap() {
                 <AutoColumn gap="4px">
                   <RowBetween align="center">
                     <Text fontWeight={500} fontSize={14} color={theme.text2}>
-                      Price
+                      价格
                     </Text>
                     <TradePrice
                       inputCurrency={currencies[Field.INPUT]}
@@ -384,9 +384,9 @@ export default function Swap() {
                   {approval === ApprovalState.PENDING ? (
                     <Dots>Approving</Dots>
                   ) : approvalSubmitted && approval === ApprovalState.APPROVED ? (
-                    'Approved'
+                    '已授权'
                   ) : (
-                    'Approve ' + currencies[Field.INPUT]?.symbol
+                    '授权 ' + currencies[Field.INPUT]?.symbol
                   )}
                 </ButtonPrimary>
                 <ButtonError
@@ -412,8 +412,8 @@ export default function Swap() {
                 >
                   <Text fontSize={16} fontWeight={500}>
                     {priceImpactSeverity > 3 && !isExpertMode
-                      ? `Price Impact High`
-                      : `Swap${priceImpactSeverity > 2 ? ' Anyway' : ''}`}
+                      ? `价格滑点太高`
+                      : `置换${priceImpactSeverity > 2 ? ' 无论如何' : ''}`}
                   </Text>
                 </ButtonError>
               </RowBetween>
@@ -440,8 +440,8 @@ export default function Swap() {
                   {swapInputError
                     ? swapInputError
                     : priceImpactSeverity > 3 && !isExpertMode
-                    ? `Price Impact Too High`
-                    : `Swap${priceImpactSeverity > 2 ? ' Anyway' : ''}`}
+                    ? `价格滑点太高`
+                    : `置换${priceImpactSeverity > 2 ? ' 无论如何' : ''}`}
                 </Text>
               </ButtonError>
             )}

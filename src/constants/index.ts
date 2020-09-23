@@ -1,7 +1,7 @@
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { ChainId, JSBI, Percent, Token, WETH } from '@uniswap/sdk'
 
-import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
+import { injected } from '../connectors'
 
 export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
 
@@ -16,6 +16,7 @@ export const USDT = new Token(ChainId.MAINNET, '0xdAC17F958D2ee523a2206206994597
 export const COMP = new Token(ChainId.MAINNET, '0xc00e94Cb662C3520282E6f5717214004A7f26888', 18, 'COMP', 'Compound')
 export const MKR = new Token(ChainId.MAINNET, '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2', 18, 'MKR', 'Maker')
 export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
+export const MEFI = new Token(ChainId.MAINNET, '0x1a969239e12f07281f8876d11afcee081d872adf', 9, 'MEFI', 'MEET.ONE Finance')
 
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
@@ -44,7 +45,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT]
+  [ChainId.MAINNET]: [MEFI, ...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -93,51 +94,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     description: '区块链生态钱包.',
     href: null,
     color: '#E8831D'
-  },
-  // WALLET_CONNECT: {
-  //   connector: walletconnect,
-  //   name: 'WalletConnect',
-  //   iconName: 'walletConnectIcon.svg',
-  //   description: 'Connect to Trust Wallet, Rainbow Wallet and more...',
-  //   href: null,
-  //   color: '#4196FC',
-  //   mobile: true
-  // },
-  // WALLET_LINK: {
-  //   connector: walletlink,
-  //   name: 'Coinbase Wallet',
-  //   iconName: 'coinbaseWalletIcon.svg',
-  //   description: 'Use Coinbase Wallet app on mobile device',
-  //   href: null,
-  //   color: '#315CF5'
-  // },
-  // COINBASE_LINK: {
-  //   name: 'Open in Coinbase Wallet',
-  //   iconName: 'coinbaseWalletIcon.svg',
-  //   description: 'Open in Coinbase Wallet app.',
-  //   href: 'https://go.cb-w.com/mtUDhEZPy1',
-  //   color: '#315CF5',
-  //   mobile: true,
-  //   mobileOnly: true
-  // },
-  // FORTMATIC: {
-  //   connector: fortmatic,
-  //   name: 'Fortmatic',
-  //   iconName: 'fortmaticIcon.png',
-  //   description: 'Login using Fortmatic hosted wallet',
-  //   href: null,
-  //   color: '#6748FF',
-  //   mobile: true
-  // },
-  // Portis: {
-  //   connector: portis,
-  //   name: 'Portis',
-  //   iconName: 'portisIcon.png',
-  //   description: 'Login using Portis hosted wallet',
-  //   href: null,
-  //   color: '#4A6C9B',
-  //   mobile: true
-  // }
+  }
 }
 
 export const NetworkContextName = 'NETWORK'

@@ -31,6 +31,14 @@ async function getTokenList(listUrl: string): Promise<TokenList> {
         }, '') ?? 'Token list failed validation'
       )
     }
+    if (json && json.tokens && json.tokens.length > 0) {
+      json.tokens.map((item: any) => {
+        if (item.logoURI.indexOf('https://raw.githubusercontent.com/') > -1) {
+          item.logoURI = item.logoURI.replace('https://raw.githubusercontent.com/', 'https://ethapi.meet.one/uniswap/')
+        }
+        return item
+      })
+    }
     return json
   }
   throw new Error('Unrecognized list URL protocol.')
